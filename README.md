@@ -2,8 +2,7 @@ TODO: Add more to the title of your project here
 
 # LearningR: Practicing awesomeness :)
 
-This is for the DDA R course
-This is for the DDA R course 
+This is for the DDA R course 2021
 
 # Brief description of folder and file contents
 
