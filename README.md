@@ -1,6 +1,6 @@
 TODO: Add more to the title of your project here
 
-# LearningR: Practicing awesomeness :D
+# LearningR: Practicing awesomeness :)
 
 This is for the DDA R course
 
