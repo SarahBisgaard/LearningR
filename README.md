@@ -2,9 +2,7 @@ TODO: Add more to the title of your project here
 
 # LearningR: Practicing awesomeness :D
 
-TODO: Give a brief description of what your project is about
-
-This project...
+This is for the DDA R course
 
 # Brief description of folder and file contents
 
