@@ -95,3 +95,102 @@ nhanes_small %>%
 nhanes_small %>%
     select(phys_active_days, phys_active) %>%
     rename(days_phys_active = phys_active_days)
+
+##Filtering
+# Filter for all females
+nhanes_small %>%
+    filter(sex == "female")
+
+# Filter for all non-females
+nhanes_small %>%
+    filter(sex != "female")        #!= is not
+
+
+# Participants with a BMI equal to 25
+nhanes_small %>%
+    filter(bmi == 25)
+
+# Participants with a BMI greater or equal to 25
+nhanes_small %>%
+    filter(bmi >= 25)
+
+# Participants with a BMI equal to 25 AND female (| (OR) & (AND))
+nhanes_small %>%
+    filter(bmi >= 25 & sex == "female")
+
+
+# Participants with a BMI greater than 25 OR female (| (OR) & (AND))
+nhanes_small %>%
+    filter(bmi > 25 | sex == "female")
+
+
+
+## Arranging the rows of your data by column
+
+# Arranging by age in ascending order
+nhanes_small %>%
+    arrange(age)
+
+# Arrange by sex in ascending order
+nhanes_small %>%
+    arrange(sex)
+
+# Arrange by age in descending order
+nhanes_small %>%
+    arrange(desc(age))
+
+# Arranging by sex, then age in ascending order
+nhanes_small %>%
+    arrange(sex, age)
+
+
+# Arranging by descending sex, then age in ascending order
+nhanes_small %>%
+    arrange(desc(sex), age)
+
+
+# Transform or add columns
+
+#Højde i meter frem for centimeter
+nhanes_small %>%
+    mutate(height = height/100)
+
+
+#Add an additional column with logged height values
+nhanes_small %>%
+    mutate(logged_height = log(height))
+
+
+#transform and Add columns at the same time
+nhanes_small %>%
+    mutate(height = height/100,
+           logged_height = log(height))
+
+# New column based on how active participants are
+nhanes_small %>%
+    mutate(highly_active = if_else(phys_active_days >= 5, "Yes", "No"))
+
+# Add and save the changes we made
+nhanes_update <- nhanes_small %>%
+    mutate(height = height / 100,
+           logged_height = log(height),
+           highly_active = if_else(phys_active_days >= 5, "Yes", "No"))
+
+
+str(nhanes_update)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

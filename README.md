@@ -30,3 +30,6 @@ You'll need to have remotes installed for this to work.
 For more information on this folder and file workflow and setup, check
 out the [prodigenr](https://rostools.github.io/prodigenr) online
 documentation.
+
+#Kommandoer:
+#usethis::use_blank_slate("project") -> ryd environment, så der ikke er noget fra det pågældende projekt fra tidligere, som kan påvirke det, som vi skal til at lave
