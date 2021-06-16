@@ -218,4 +218,31 @@ nhanes_small %>%
               median_phys_active_days = median(phys_active_days, na.rm = TRUE))
 
 
+## Summary statistics by a group
+nhanes_small %>%
+    group_by(diabetes) %>%
+    summarise(mean_age = mean(age, na.rm = TRUE),
+              mean_bmi = mean(bmi, na.rm = TRUE))
+
+
+nhanes_small %>%
+    filter(!is.na(diabetes))                                    %>%  #fjern NA
+    group_by(diabetes) %>%
+    summarise(mean_age = mean(age, na.rm = TRUE),
+              mean_bmi = mean(bmi, na.rm = TRUE)) %>%
+    ungroup()                                                        # tilføj NA til datasættet igen
+
+
+
+## Save datasets as files
+
+# Saving data as an .rda file in the data folder
+usethis::use_data(nhanes_small, overwrite = TRUE)
+
+
+
+
+
+
+
 
