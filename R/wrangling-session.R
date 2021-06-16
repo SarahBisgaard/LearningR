@@ -180,12 +180,24 @@ nhanes_update <- nhanes_small %>%
 str(nhanes_update)
 
 
+##Summary statistics by group
 
+# Maximum BMI
+nhanes_small %>%
+    summarise(max_bmi = max(bmi))
 
+# Remove NA
+nhanes_small %>%
+    summarise(max_bmi = max(bmi, na.rm = TRUE))
 
+# How many NA are removed
+nhanes_small %>%
+    summarise(sum_na = sum(is.na(bmi)))
 
-
-
+# Calculating 2 summary statistics
+nhanes_small %>%
+    summarise(max_bmi = max(bmi, na.rm = TRUE),
+              min_bmi = min(bmi, na.rm = TRUE))
 
 
 
