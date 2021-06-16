@@ -76,3 +76,22 @@ nhanes_small %>% colnames()
 nhanes_small %>%
     select(phys_active) %>%
     rename(physically_active = phys_active)
+
+## Exercise 9.9
+#Select three columns
+nhanes_small %>%
+    select(tot_chol, bp_sys_ave, poverty)
+
+#rename
+nhanes_small %>%
+    select(diabetes_age) %>%
+    rename(diabetes_diagnosis_age = diabetes_age)
+
+#
+nhanes_small %>%
+    select(bmi, contains("Age"))
+
+#
+nhanes_small %>%
+    select(phys_active_days, phys_active) %>%
+    rename(days_phys_active = phys_active_days)
