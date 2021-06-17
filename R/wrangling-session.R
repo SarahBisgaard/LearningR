@@ -246,3 +246,22 @@ usethis::use_data(nhanes_small, overwrite = TRUE)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
